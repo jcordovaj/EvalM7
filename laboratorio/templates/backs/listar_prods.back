@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Barra de búsqueda de laboratorios -->
+{% comment "" %}<div class="container d-flex justify-content-center">{% endcomment %}
+    <div class="container">
+    <br>
+    <h1 class="text-center"><strong><img src="{% static 'img/labs001.svg' %}" alt=""> Listado de Productos</strong></h1>
+    <br>
+    <form method="GET" class="d-flex align-items-center" action="{% url 'listar_prods' %}">
+        <div class="row">
+            <div class="col-md-4">
+                <label for="query">Buscar por nombre de producto:</label>
+                <input type="text" class="form-control" id="query" name="query" value="{{ query }}">
+            </div>
+        </div>    
+        <div class="row">    
+            <div class="col-md-4">
+                
+            </div>
+        </div>
+            <select name="nom_prod">
+                <option value="">Filtrar por Producto</option>
+                    {% for prod in productos %}
+                        <option value="{{ prod }}">{{ prod }}</option>
+                    {% endfor %}
+            </select>
+            <select name="lab_prod">
+                <option value="">Filtrar por Laboratorio</option>
+                    {% for lab_prod in productos.lab_prod %}
+                        <option value="{{ lab_nom }}">{{ lab_nom }}</option>
+                    {% endfor %}
+            </select>
+            <select name="f_fabricacion">
+                <option value="">Filtrar por Año</option>
+                {% for anio in productos.f_fabricacion %}
+                    <option value="{{ anio }}">{{ anio }}</option>
+                {% endfor %}
+            </select>
+            <select name="p_costo">
+                <option value="">Filtrar por Costo</option>
+                {% for p_costo in productos.p_costo %}
+                    <option value="{{ p_costo }}">{{ p_costo }}</option>
+                {% endfor %}
+            </select>
+            <select name="p_venta">
+                <option value="">Filtrar por Precio</option>
+                {% for p_venta in productos.p_venta %}
+                    <option value="{{ p_venta }}">{{ p_venta }}</option>
+                {% endfor %}
+            </select>          
+            <button class="btn btn-outline-success rounded ms-2 shadow-lg" type="submit">Buscar</button>
+            <button class="btn btn-outline-secondary rounded ms-2 shadow-lg" type="button" onclick="limpiarBusqueda()">Limpiar</button>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
+
+{% block list %}
+<!-- Bloque de listado de vehículos -->
+<br><br>
+<div class="container shadow-lg">
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Nombre del Producto</th>
+                    <th>Año fabricación</th>
+                    <th>Costo</th>
+                    <th>Precio de venta</th>
+                    <th>Laboratorio que lo produce</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for prod in productos %}
+                    <tr>
+                        <td>{{ prod.nom_prod }}</td>
+                        <td>{{ prod.f_fabricacion }}</td>
+                        <td>{{ prod.p_costo }}</td>
+                        <td>{{ prod.p_venta }}</td>
+                        <td>
+                            {% for laboratorio in laboratorios %}
+                                <option value="{{ laboratorio.id }}" 
+                                {% if lab_prod == laboratorio.id %}selected
+                                {% endif %}>{{ laboratorio.nom_lab }}
+                                </option>
+                            {% endfor %}
+                        </td> 
+                        <td>
+                            <a href="{% url 'editar_prod' prod.pk %}" class="btn btn-success">Editar</a>
+                            <a href="{% url 'eliminar_prod' prod.pk %}" class="btn btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="container" style="margin: 120px;"></div>
+
+{% endblock list %}
+
+{% block scripts %}
+<script>
+    function limpiarBusqueda() {
+        document.querySelector('input[name="query"]').value = '';
+        document.querySelector('form').submit();
+    }
+</script>
+{% endblock scripts %}

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<main class="video-container">
+    <video class="video-background" muted autoplay loop preload="auto" poster="{% static 'assets/img/fondo_lab_alt.png' %}">
+        <source src="{% static 'assets/video/videoLab03.mp4'%}" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div class="content">
+        <div class="text-center">
+            <h1><strong class="">GesLab FS 1.0</strong></h1>
+            <h5>¡Bienvenido al gestor de laboratorios y productos farmaceúticos!</h5>
+            <br>
+            <div class="container d-flex justify-content-center mt-5">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="d-flex flex-column align-items-center">
+                      <a href="{% url 'listar' %}" class="btn btn-success mt-3 neon-button">Listado de Laboratorios</a>
+                      <a href="{% url 'lab_add' %}" class="btn btn-success mt-3 neon-button">Agregar un Laboratorio</a>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="d-flex flex-column align-items-center">
+                        {% comment "" %}<a href="{% url 'listar_prods' %}" class="btn btn-secondary mt-3 neon-button">Listado de Productos</a>{% endcomment %}
+                        <a href="{% url 'listar_prods' %}" class="btn btn-secondary mt-3 neon-button">Listado de Productos</a>
+                        <a href="{% url 'prod_add' %}" class="btn btn-success mt-3 neon-button">Agregar un Producto</a>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="d-flex flex-column align-items-center">
+                      <a href="{% url 'listar_dires' %}" class="btn btn-success mt-3 neon-button">Listado de Directores</a>
+                      <a href="{% url 'dire_add' %}" class="btn btn-success mt-3 neon-button">Agregar un Director</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</main>
+<!--footer black-->
+<footer id="myFooter" class="fixed-bottom bg-transparent text-center text-white py-1">
+    <div class="container-flex">
+        <p class="mt-2 fs-5"><strong>GesLab APP <span class="fs-6">© 2024 Copyright:
+            <a class="text-white" href="https://jcordovaj.github.io/">Jota Cordova</a></span>
+    </div></strong></p>
+    </div>
+</footer>
+<!--end footer black-->
+{% endblock content %}

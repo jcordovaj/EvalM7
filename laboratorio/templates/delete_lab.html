@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<br>
+<br>
+<div class="container d-flex justify-content-center">
+  <div class="card shadow-lg">
+    <div class="card-body">
+      <h1 class="card-title"><strong>Eliminar el Laboratorio {{ laboratorio.nom_lab }}</strong></h1>
+
+      <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmationModal">
+        Eliminar
+      </button>
+      <button type="button" class="btn btn-primary" onclick="cancelar()">Volver al listado</button>
+
+      <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="confirmationModalLabel">Confirmar Eliminación</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              ¿Estás seguro de eliminar el laboratorio {{ laboratorio.nom_lab }}?
+            </div>
+            <div class="modal-footer">
+              <form method="post" id="deleteForm">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Volver al listado</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer id="myFooter" class="fixed-bottom bg-black text-center text-white py-1">
+  <div class="container-flex">
+    <p class="mt-2"><strong>GesLab FS APP</strong></p>
+  </div>
+</footer>
+
+{% block scripts %}
+              
+  <script>
+    
+    function cancelar() {
+      history.back();
+    }
+    const deleteForm = document.getElementById("deleteForm");
+    deleteForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      deleteForm.submit();
+    });
+
+  </script>
+{% endblock scripts %}
+{% endblock content%}

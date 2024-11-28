@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br><br><br><br><br>
+<div class="container">
+    <h1 class="text-center"><strong>Director agregado con éxito!</strong></h1>
+</div>
+<br><br>
+<div class="container d-flex justify-content-center">
+    <div>
+        <a class="btn btn-success mt-3" href="{% url 'index' %}">Página de Inicio</a>
+    </div>
+    <div class="ms-3">
+        <a class="btn btn-secondary mt-3" href="{% url 'dire_add' %}">Agregar otro Director</a>
+    </div>
+    <div class="ms-3">
+        <a class="btn btn-dark mt-3" href="{% url 'listar_dire' %}">Listado Directores</a>
+    </div>
+</div>
+<!--footer black-->
+<footer id="myFooter" class="fixed-bottom bg-black text-center text-white py-1">
+    <div class="container-flex">
+        <p class="mt-2"><strong>GesLabs APP</strong></p>
+    </div>
+</footer>
+<!--end footer black-->
+<!--script footer-->
+<script>
+    // Obtiene el elemento del footer
+    var footer = document.getElementById("myFooter");
+
+    // Agrega un event listener para el evento "mouseover"
+    footer.addEventListener("mouseover", function () {
+        // Oculta el footer
+        footer.style.display = "none";
+    });
+
+    // Agrega un event listener para el evento "mouseout"
+    footer.addEventListener("mouseout", function () {
+        // Muestra el footer
+        footer.style.display = "block";
+    });
+</script>
+
+{% endblock content %}

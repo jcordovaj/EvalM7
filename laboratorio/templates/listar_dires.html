@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block content %}
+<div class="container">
+    <br>
+    <h1 class="text-center"><strong><img src="{% static 'img/labs001.svg' %}" alt="GesLab ico"/>Información de Directores</strong></h1>
+    <br>
+    <div class="row align-items-center mb-3">
+        <div class="col-md-6">
+            <form method="GET" class="d-inline-flex" action="{% url 'listar_dires' %}">
+                <row class="form-group me-2">
+                    <label for="query">Buscar por nombre:</label>
+                    <input type="text" class="form-control" id="query" name="query" value="{{ query }}"/>
+                </row>
+                <button class="btn btn-outline-success rounded shadow-lg" type="submit">Buscar</button>
+                <button class="btn btn-outline-secondary rounded shadow-lg ms-2" type="button" onclick="limpiarBusqueda()">Limpiar</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <form method="GET" class="d-inline-flex" action="{% url 'listar_dires' %}">
+                <div class="form-group me-2">
+                    <label for="lab_dire">Filtrar por Laboratorio:</label>
+                    <select class="form-control" id="lab_dire" name="lab_dire">
+                        <option value="">Todos los Laboratorios</option>
+                        {% for lab in laboratorios %}
+                            <option value="{{ lab.pk }}">{{ lab.nom_lab }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <button class="btn btn-outline-success rounded shadow-lg" type="submit">Filtrar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                <th>Nombre</th>
+                <th>Especialidad</th>
+                <th>Laboratorio</th>
+                <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for director in directores_generales %}
+                    <tr>
+                        <td>{{ director.nom_dire }}</td>
+                        <td>{{ director.especialidad }}</td>
+                        <td>{{ director.lab_dire.nom_lab }}</td>
+                        <td>
+                            <a href="{% url 'editar_dire' director.pk %}" class="btn btn-sm btn-success">Editar</a>
+                            <a href="{% url 'eliminar_dire' director.pk %}" class="btn btn-sm btn-danger" >Eliminar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% block scripts %}
+<script>
+  function limpiarBusqueda() {
+    document.querySelector('input[name="query"]').value = "";
+    document.querySelector("form").submit();
+  }
+</script>
+{% endblock scripts %}
+{% endblock content %}

@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Barra de búsqueda de laboratorios -->
+<br>
+<h1 class="text-center"><strong><img src="{% static 'img/labs001.svg' %}" alt="">Información de Laboratorios</strong></h1>
+<br>
+<div class="container d-flex justify-content-center">
+    <form class="d-flex align-items-center" method="GET" action="{% url 'listar' %}">
+        <div class="input-group">
+            <select name="nom_lab">
+                <option value="">Filtrar por Laboratorio</option>
+                {% for lab in nom_lab_choices %}
+                    <option value="{{ lab }}">{{ lab }}</option>
+                {% endfor %}
+            </select>
+            &nbsp
+            <select name="pais_lab">
+                <option value="">Filtrar por País</option>
+                {% for pais in pais_choices %}
+                    <option value="{{ pais }}">{{ pais }}</option>
+                {% endfor %}
+            </select>
+            &nbsp
+            <select name="city_lab">
+                <option value="">Filtrar por Ciudad</option>
+                {% for city in city_choices %}
+                    <option value="{{ city }}">{{ city }}</option>
+                {% endfor %}
+            </select>
+            &nbsp
+            <select name="anio">
+                <option value="">Filtrar por Año</option>
+                {% for anio, anio_desc in anio_choices %}
+                    <option value="{{ anio }}">{{ anio }}</option>
+                {% endfor %}
+            </select>
+            &nbsp
+            <select name="nom_prod">
+                <option value="">Filtrar por Producto</option>
+                {% for producto in producto_choices %}
+                    <option value="{{ producto }}">{{ producto }}</option>
+                {% endfor %}
+            </select>
+            &nbsp
+            <button class="btn btn-outline-success rounded ms-2 shadow-lg" type="submit">Buscar</button>
+            <button class="btn btn-outline-secondary rounded ms-2 shadow-lg" type="button" onclick="limpiarBusqueda()">Limpiar</button>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
+
+{% block list %}
+<!-- Bloque de listado de vehículos -->
+<br><br>
+<div class="container shadow-lg">
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Nombre del Laboratorio</th>
+                    <th>Ciudad</th>
+                    <th>País</th>
+                    <th>Productos Asociados</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for lab in labs %}
+                    <tr>
+                        <td>{{ lab.nom_lab }}</td>
+                        <td>{{ lab.city_lab }}</td>
+                        <td>{{ lab.pais_lab }}</td>
+                        <td>
+                            {% for producto in lab.producto_set.all %}
+                              {{ producto.nom_prod }}<br>
+                            {% endfor %}
+                        </td> 
+                        <td>
+                            <a href="{% url 'editar_lab' lab.pk %}" class="btn btn-success">Editar</a>
+                            <a href="{% url 'eliminar_lab' lab.pk %}" class="btn btn-danger">Eliminar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="container" style="margin: 120px;"></div>
+
+{% endblock list %}
+
+{% block scripts %}
+<script>
+    function limpiarBusqueda() {
+        document.querySelector('input[name="query"]').value = '';
+        document.querySelector('form').submit();
+    }
+</script>
+{% endblock scripts %}

@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <br>
+    <h1 class="text-center">
+        <strong><img src="{% static 'img/labs001.svg' %}" alt="">Información de Productos</strong>
+    </h1>
+    <br>
+
+    <!-- Formulario de búsqueda y filtros -->
+    <form method="GET" action="{% url 'listar_prods' %}">
+        <!-- Búsqueda general -->
+        <div class="row mb-3">
+            <div class="col-md-6 offset-md-6 text-end">
+                <label for="query">Buscar por nombre de producto:</label>
+                <input type="text" class="form-control" id="query" name="query" value="{{ query }}">
+            </div>
+        </div>
+
+        <!-- Filtros -->
+        <div class="row mb-3">
+            <div class="col-md-3">
+                <label for="nom_prod">Filtrar por Producto:</label>
+                <select class="form-select" id="nom_prod" name="nom_prod">
+                    <option value="">Todos</option>
+                    {% for nombre in productos_nombres %}
+                    <option value="{{ nombre }}" {% if nombre == nom_prod %}selected{% endif %}>{{ nombre }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="lab_prod">Filtrar por Laboratorio:</label>
+                <select class="form-select" id="lab_prod" name="lab_prod">
+                    <option value="">Todos</option>
+                    {% for lab in laboratorios %}
+                    <option value="{{ lab.id }}" {% if lab.id|stringformat:"s" == lab_prod %}selected{% endif %}>{{ lab.nom_lab }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label for="f_fabricacion">Filtrar por Año:</label>
+                <select class="form-select" id="f_fabricacion" name="f_fabricacion">
+                    <option value="">Todos</option>
+                    {% for anio in fabricacion_anios %}
+                    <option value="{{ anio }}" {% if anio|stringformat:"s" == f_fabricacion %}selected{% endif %}>{{ anio }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <!-- Botones -->
+        <div class="row">
+            <div class="col text-end">
+                <button class="btn btn-outline-success rounded shadow-lg" type="submit">Buscar</button>
+                <button class="btn btn-outline-secondary rounded shadow-lg" type="button" onclick="limpiarBusqueda()">Limpiar</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<br>
+
+<!-- Tabla de productos -->
+<div class="container shadow-lg">
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Nombre del Producto</th>
+                    <th>Año fabricación</th>
+                    <th>Costo</th>
+                    <th>Precio de venta</th>
+                    <th>Laboratorio que lo produce</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for prod in productos %}
+                <tr>
+                    <td>{{ prod.nom_prod }}</td>
+                    <td>{{ prod.f_fabricacion }}</td>
+                    <td>{{ prod.p_costo }}</td>
+                    <td>{{ prod.p_venta }}</td>
+                    <td>{{ prod.lab_prod.nom_lab }}</td> <!-- Relación 1:1 -->
+                    <td>
+                        <a href="{% url 'editar_prod' prod.pk %}" class="btn btn-success">Editar</a>
+                        <a href="{% url 'eliminar_prod' prod.pk %}" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}
+
+{% block scripts %}
+<script>
+    function limpiarBusqueda() {
+        document.querySelectorAll('input, select').forEach(field => field.value = '');
+        document.querySelector('form').submit();
+    }
+</script>
+{% endblock scripts %}

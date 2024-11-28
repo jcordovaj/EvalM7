@@ -1,0 +1,137 @@
+/* Estilos para el contenedor principal */
+.video-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Estilos para el video de fondo */
+.video-background {
+    position: absolute;
+    top: -10; /* Subir el video */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Estilos para la capa semitransparente */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Cambiar el valor de opacidad según lo desees */
+    z-index: -1; /* Colocar la capa detrás del texto y botones */
+}
+
+/* Estilos para texto y botones */
+.content {
+    position: absolute;
+    top: 40%; /* Subir el contenido 40% hacia arriba */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1; /* Colocar el contenido sobre el video */
+}
+
+/* BOTONES del Index */
+.content .btn {
+    margin: 15px;
+    padding: 12px 25px;
+    font-size: 15px;
+}
+
+.neon-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.5px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.neon-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #19026f, #19026f, #19026f, #19026f);
+    transform: translateX(-100%);
+    z-index: -1;
+    transition: transform 0.3s;
+}
+
+.neon-button:hover:before {
+    transform: translateX(0);
+}
+
+/* NAVBAR */
+.nav-item {
+    width: auto;
+}
+
+/*.bg-image {
+    background-image: url('{% static "img/header_blue.png" %}');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 60px;
+}*/
+
+.navbar-dark .navbar-nav .nav-link .nav_readme {
+    color: black; /* antes negro */
+}
+
+#nav-toggle #mi-readme {
+    color: white; /* antes negro */
+}
+
+/* Alinear elementos del navbar */
+.navbar-nav .nav-item {
+    margin-right: 10px; /* Ajusta el espacio entre elementos */
+}
+
+/* Opcional: Estilos para el logo */
+
+.navbar-brand {
+    color: #000000;
+}
+
+.navbar-brand img {
+    height: 20px; /* Ajusta el tamaño del logo según tus preferencias */
+    margin-right: 10px;
+    
+}
+
+.navbar-toggler {
+    color: white;
+}
+
+/*.collapse {
+     Estilos para el estado colapsado (oculto) 
+    display: none;
+  }
+*/
+
+/* Cambiar color al hacer hover */
+.nav-link:hover {
+    color: #ffc107 !important; /* Color amarillo */
+    text-decoration: underline; /* Subrayado */
+}
+
+/* Cambiar color de dropdown items */
+.dropdown-item:hover {
+    background-color: #ffc107 !important; /* Fondo amarillo */
+    color: #000 !important; /* Texto negro */
+}

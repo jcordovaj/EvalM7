@@ -1,0 +1,27 @@
+{% extends "layouts/base.html" %}
+
+{% block contenido %}
+
+    <main class="container">
+        <section>
+            <h1 class="text-center py-5">Actualiza vehículo: {{vehiculo.marca}} {{vehiculo.modelo}} {{vehiculo.year}}.</h1>
+        </section>
+
+        <section>
+
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-5">
+                    <form method="post">
+                        {% csrf_token %}
+                        {{form}}
+                        <div>
+                            <input type="submit" class="btn btn-primary" value="Actualiza vehículo"> 
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+{% endblock  %}

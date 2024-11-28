@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<h1 class="text-center">Listado de Directores Generales</h1>
+<br>
+{% block list %}
+<div class="container d-flex justify-content-center">
+    <form method="GET" class="d-flex align-items-center" action="{% url 'listar_dires' %}">
+        <div class="row">
+            <div class="col-md-6">
+                <label for="query">Buscar por nombre:</label>
+                <input type="text" class="form-control" id="query" name="query" value="{{ query }}">
+            </div>
+            <div class="col-md-6">
+                <label for="nom_dire">Filtrar por Director:</label>
+                <input type="text" class="form-control" id="nom_dire" name="nom_dire" value="{{ nom_dire }}">
+            </div>
+            <div class="col-md-6">
+                <label for="lab_dire">Filtrar por Laboratorio:</label>
+                <select class="form-control" id="lab_dire" name="lab_dire">
+                    <option value="">Todos los Laboratorios</option>
+                    </select>
+            </div>
+        </div>
+        <button class="btn btn-outline-success rounded ms-2 shadow-lg" type="submit">Buscar</button>
+        <button class="btn btn-outline-secondary rounded ms-2 shadow-lg" type="button" onclick="limpiarBusqueda()">Limpiar</button>
+    </form>
+</div>
+
+<br><br>
+
+<div class="container shadow-lg">
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Especialidad</th>
+                    <th>Laboratorio</th>
+                    </tr>
+            </thead>
+            <tbody>
+                {% for director in directores_generales %}
+                <tr>
+                    <td>{{ director.nom_dire }}</td>
+                    <td>{{ director.especialidad }}</td>
+                    <td>{{ director.laboratorio.pais_lab }}</td>  <td>
+                    {% for producto in director.laboratorio.producto_set.all %}
+                        {{ producto.nom_prod }}<br>
+                    {% endfor %}
+                    </td>
+                    <td>
+                    <a href="{% url 'editar_dire' director.pk %}" class="btn btn-success">Editar</a>
+                    <a href="{% url 'eliminar_dire' director.pk %}" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="container" style="margin: 120px;"></div>
+
+{% endblock list %}
+{% endblock content %}
+{% block scripts %}
+    <script>
+        function limpiarBusqueda() {
+            document.querySelector('input[name="query"]').value = '';
+            document.querySelector('form').submit();
+        }
+    </script>
+{% endblock scripts %}

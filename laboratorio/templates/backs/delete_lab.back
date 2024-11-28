@@ -1,0 +1,97 @@
+{% comment "" %}{% extends "base.html" %}
+{% block content %}
+<br><br>
+
+<main class="container d-flex justify-content-center">
+    <section>
+        <h3 class="text-center py-5">Eliminar el laboratorio {{laboratorio.nom_lab}}, número {{laboratorio.id}}, ubicado en {{laboratorio.city_lab}}, en {{laboratorio.pais_lab}}</h3>
+    </section>
+    <section>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-5">
+                <form method="post" id="form_delete">
+                    {% csrf_token %}
+                    {{form}}
+                    <div>
+                        <input type="submit" class="btn btn-danger" value="Eliminar"> 
+                    </div>
+                </form>
+                <div>
+                    <a href="{% url 'listar' %}" class="btn btn-primary">Volver al listado</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<script>
+        const form_delete = document.getElementById("form_delete")
+        form_delete.addEventListener("submit", (event)=> {
+            event.preventDefault();
+            let confirmacion = confirm("Está seguro que desea eliminar al registro?")
+            if(confirmacion){
+                form_delete.submit()
+            }
+        })
+    </script>
+{% endblock  %}
+{% endcomment %}
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br>
+<br>
+<div class="container d-flex justify-content-center">
+    <div class="card shadow-lg">
+        <div class="card-body">
+            <h1 class="card-title"><strong>Eliminar Laboratorio {{laboratorio.nom_lab}}</strong></h1>
+            <form method="post" id="form_delete">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="text-center pt-3">
+                    <button type="submit" class="btn btn-primary"><strong>Eliminar</strong></button>
+                    <button type="button" class="btn btn-secondary" onclick="cancelar()">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--footer black-->
+<footer id="myFooter" class="fixed-bottom bg-black text-center text-white py-1">
+    <div class="container-flex">
+        <p class="mt-2"><strong>GesLab FS APP</strong></p>
+    </div>
+</footer>
+<!--end footer black-->
+<!--script vanish footer black-->
+
+<script>
+// Confirma eliminación
+const form_delete = document.getElementById("form_delete")
+form_delete.addEventListener("submit", (event)=> {
+    event.preventDefault();
+    let confirmacion = confirm("Está seguro que desea eliminar al registro?")
+    if(confirmacion){
+        form_delete.submit()
+    }
+})
+    
+//cancelar btn
+function cancelar() {
+        history.back(); // Regresar a la página anterior
+    }
+    // Obtiene el elemento del footer
+    var footer = document.getElementById("myFooter");
+
+    // Agrega un event listener para el evento "mouseover"
+    footer.addEventListener("mouseover", function () {
+        // Oculta el footer
+        footer.style.display = "none";
+    });
+
+    // Agrega un event listener para el evento "mouseout"
+    footer.addEventListener("mouseout", function () {
+        // Muestra el footer
+        footer.style.display = "block";
+    });
+</script>
+{% endblock %}

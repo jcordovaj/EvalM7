@@ -1,0 +1,45 @@
+class LaboratorioTestCase(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+        for l in range(1, 5):
+            Laboratorio.objects.create(
+                nom_lab=f"Laboratorio{l}",
+                city_lab=f"Ciudad{l}",
+                pais_lab=f"Pais{l}"
+                )
+
+    def test_laboratorio_data(self):
+        """Comprueba que los datos del laboratorio se hayan guardado correctamente."""
+        laboratorio = Laboratorio.objects.get(nom_lab="Laboratorio3")
+        self.assertEqual(laboratorio.city_lab, "Ciudad3")
+        self.assertEqual(laboratorio.pais_lab, "Pais3")
+
+    def test_laboratorio_detail_url(self):
+        """Comprueba que la URL de edición de un laboratorio devuelve un status 200."""
+        laboratorio = Laboratorio.objects.first()
+        response = self.client.get(reverse('editar_prod'))
+        self.assertEqual(response.status_code, 200)
+    
+    def test_listar_productos_url(self):
+        """Comprueba que la URL de listado de productos devuelve un status 200."""
+        response = self.client.get(reverse('listar_prods'))
+        self.assertEqual(response.status_code, 200)
+ 
+    def test_laboratorio_RegistroView(self):
+        """Comprueba que la vista LISTAR laboratorios responde correctamente."""
+        response = self.client.get(reverse('registro'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'registro.html') 
+        
+    def test_laboratorio_IndexView(self):
+        """Comprueba que la vista del INDEX de laboratorios responde correctamente."""
+        response = self.client.get(reverse('index'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'index.html')
+        
+    def test_listar_productos_con_filtro(self):
+        """Crea un producto con un laboratorio específico y verifica si aparece en la lista"""
+        laboratorio = Laboratorio.objects.create(nombre='Laboratorio6')
+        producto    = Producto.objects.create(nombre='Producto6', laboratorio=laboratorio)
+        response = self.client.get(reverse('listar_prods.html'), {'lab_prod': laboratorio.id})
+        self.assertContains(response, producto.nombre)                

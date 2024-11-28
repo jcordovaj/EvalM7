@@ -1,0 +1,62 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg bg-black">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a class="navbar-brand text-white" href="{% url 'index' %}">
+      <img src="{% static 'img/labs001.svg' %}" alt="Logo" height="30"> GESLAB FS 1.0
+    </a>
+
+    <!-- Menú colapsable -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bx bx-menu-alt-right"></i>
+    </button>
+
+    <!-- Opciones del menú -->
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active text-white" aria-current="page" href="{% url 'index' %}">Inicio</a>
+
+        <!-- Dropdown Listar -->
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarListarDropdown" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false">
+            Listar
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarListarDropdown">
+            <li><a class="dropdown-item" href="{% url 'listar' %}">Laboratorios</a></li>
+            <li><a class="dropdown-item" href="{% url 'listar_prods' %}">Productos</a></li>
+            <li><a class="dropdown-item" href="{% url 'listar_dires' %}">Directores</a></li>
+          </ul>
+        </div>
+
+        <!-- Dropdown Agregar -->
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarAgregarDropdown" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false">
+            Agregar
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarAgregarDropdown">
+            <li><a class="dropdown-item" href="{% url 'lab_add' %}">Agregar Laboratorio</a></li>
+            <li><a class="dropdown-item" href="{% url 'prod_add' %}">Agregar Producto</a></li>
+            <li><a class="dropdown-item" href="{% url 'dire_add' %}">Agregar Director</a></li>
+          </ul>
+        </div>
+
+        <!-- Readme -->
+        <a class="nav-link text-white" href="{% static 'docs/readme.html' %}">Readme <i class="bx bx-book-reader"></i></a>
+      </div>
+
+      <!-- Opciones de autenticación -->
+      <div class="navbar-nav ms-auto">
+        {% if user.is_authenticated %}
+          <a class="nav-link text-white" href="/logout"><strong>Logout</strong></a>
+          <a class="nav-link text-white">Bienvenido, <strong>{{ user.username }}</strong></a>
+        {% else %}
+          <a class="nav-link text-white" href="/login"><strong>Login</strong></a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</nav>

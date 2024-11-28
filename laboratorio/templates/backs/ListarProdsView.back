@@ -1,0 +1,33 @@
+# Listar Productos y barra de filtros
+class ListarProductosView(LoginRequiredMixin, View):
+    login_url = '/login/'
+    redirect_field_name = 'next'
+
+    def get(self, request):
+        productos = Producto.objects.all()
+        query = request.GET.get("query")
+        nom_prod = request.GET.get("nom_prod")
+        lab_prod = request.GET.get("lab_prod")
+        f_fabricacion = request.GET.get("f_fabricacion")
+
+        if query:
+            productos = productos.filter(
+                Q(nom_prod__icontains=query)
+            )
+        if nom_prod:
+            productos = productos.filter(nom_prod__icontains=nom_prod)
+        if lab_prod:
+            productos = productos.filter(lab_prod__id=lab_prod)
+        if f_fabricacion:
+            productos = productos.filter(f_fabricacion=f_fabricacion)
+
+        laboratorios = Laboratorio.objects.all()  
+
+        context = {
+            'productos': productos,
+            'laboratorios': laboratorios,
+            'query': query,  
+            'nom_prod': nom_prod,  
+            'f_fabricacion': f_fabricacion,
+        }
+        return render(request, "listar_prods.html", context)
