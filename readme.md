@@ -1,4 +1,4 @@
-![1732829091608](image/readme/1732829091608.png)
+![1732829091608](static/docs/image/readme/1732829091608.png)
 
 # Gestor de Laboratorios
 
