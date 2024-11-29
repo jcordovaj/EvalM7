@@ -1,4 +1,5 @@
 |-- .gitignore
+|-- build_files.sh
 |-- config
     |-- asgi.py
     |-- settings.py
@@ -10,6 +11,8 @@
         |-- urls.cpython-312.pyc
         |-- wsgi.cpython-312.pyc
         |-- __init__.cpython-312.pyc
+|-- Data
+    |-- respaldobbdd_db_final_orm.tar
 |-- laboratorio
     |-- admin.py
     |-- apps.py
@@ -64,7 +67,6 @@
         |-- prod_add.html
         |-- prod_edit.html
         |-- registro.html
-        |-- update_vehiculo.back
     |-- tests.py
     |-- views.py
     |-- __init__.py
@@ -77,6 +79,7 @@
         |-- views.cpython-312.pyc
         |-- __init__.cpython-312.pyc
 |-- manage.py
+|-- readme.md
 |-- requirements.txt
 |-- static
     |-- css
@@ -87,24 +90,9 @@
             |-- readme
                 |-- 1732829091608.png
         |-- readme.html
-        |-- readme.md
     |-- img
-        |-- blue_pencil.png
         |-- fondo_lab_alt.PNG
-        |-- green_check.png
-        |-- green__flask.png
-        |-- header_blue.png
-        |-- lab001.jpg
-        |-- lab002.jpg
-        |-- lab002.png
         |-- labs001.svg
-        |-- red_check.png
-        |-- red_flask.png
-        |-- report.png
-        |-- reporte_salud.png
-        |-- reports_icon.png
-        |-- triple_flask.png
-        |-- yellow_flask.png
     |-- media
         |-- favicon_rojo.png
         |-- videoLab03.mp4
@@ -8778,16 +8766,27 @@
                 |-- util.py
                 |-- __init__.py
                 |-- __pycache__
+                    |-- basereport.cpython-312-pytest-8.3.3.pyc
                     |-- basereport.cpython-312.pyc
+                    |-- extras.cpython-312-pytest-8.3.3.pyc
                     |-- extras.cpython-312.pyc
+                    |-- fixtures.cpython-312-pytest-8.3.3.pyc
                     |-- fixtures.cpython-312.pyc
+                    |-- hooks.cpython-312-pytest-8.3.3.pyc
                     |-- hooks.cpython-312.pyc
+                    |-- plugin.cpython-312-pytest-8.3.3.pyc
                     |-- plugin.cpython-312.pyc
+                    |-- report.cpython-312-pytest-8.3.3.pyc
                     |-- report.cpython-312.pyc
+                    |-- report_data.cpython-312-pytest-8.3.3.pyc
                     |-- report_data.cpython-312.pyc
+                    |-- selfcontained_report.cpython-312-pytest-8.3.3.pyc
                     |-- selfcontained_report.cpython-312.pyc
+                    |-- util.cpython-312-pytest-8.3.3.pyc
                     |-- util.cpython-312.pyc
+                    |-- __init__.cpython-312-pytest-8.3.3.pyc
                     |-- __init__.cpython-312.pyc
+                    |-- __version.cpython-312-pytest-8.3.3.pyc
                     |-- __version.cpython-312.pyc
                 |-- __version.py
             |-- pytest_html-4.1.1.dist-info
@@ -8811,21 +8810,33 @@
                     |-- travis_ci.py
                     |-- __init__.py
                     |-- __pycache__
+                        |-- appveyor.cpython-312-pytest-8.3.3.pyc
                         |-- appveyor.cpython-312.pyc
+                        |-- bitbucket.cpython-312-pytest-8.3.3.pyc
                         |-- bitbucket.cpython-312.pyc
+                        |-- circleci.cpython-312-pytest-8.3.3.pyc
                         |-- circleci.cpython-312.pyc
+                        |-- codebuild.cpython-312-pytest-8.3.3.pyc
                         |-- codebuild.cpython-312.pyc
+                        |-- gitlab_ci.cpython-312-pytest-8.3.3.pyc
                         |-- gitlab_ci.cpython-312.pyc
+                        |-- jenkins.cpython-312-pytest-8.3.3.pyc
                         |-- jenkins.cpython-312.pyc
+                        |-- taskcluster.cpython-312-pytest-8.3.3.pyc
                         |-- taskcluster.cpython-312.pyc
+                        |-- travis_ci.cpython-312-pytest-8.3.3.pyc
                         |-- travis_ci.cpython-312.pyc
+                        |-- __init__.cpython-312-pytest-8.3.3.pyc
                         |-- __init__.cpython-312.pyc
                 |-- hooks.py
                 |-- plugin.py
                 |-- __init__.py
                 |-- __pycache__
+                    |-- hooks.cpython-312-pytest-8.3.3.pyc
                     |-- hooks.cpython-312.pyc
+                    |-- plugin.cpython-312-pytest-8.3.3.pyc
                     |-- plugin.cpython-312.pyc
+                    |-- __init__.cpython-312-pytest-8.3.3.pyc
                     |-- __init__.cpython-312.pyc
                     |-- __version.cpython-312.pyc
                 |-- __version.py
