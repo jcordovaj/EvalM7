@@ -21,11 +21,13 @@
         |-- 0001_initial.py
         |-- 0002_alter_producto_f_fabricacion.py
         |-- 0003_alter_directorgeneral_lab_dire.py
+        |-- 0004_actualizado_campo.py
         |-- __init__.py
         |-- __pycache__
             |-- 0001_initial.cpython-312.pyc
             |-- 0002_alter_producto_f_fabricacion.cpython-312.pyc
             |-- 0003_alter_directorgeneral_lab_dire.cpython-312.pyc
+            |-- 0004_actualizado_campo.cpython-312.pyc
             |-- __init__.cpython-312.pyc
     |-- models.py
     |-- templates

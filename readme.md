@@ -92,14 +92,25 @@ El Gestor de Laboratorios, GESLAB FS 1.0, es una aplicación web desarrollada us
    ```bash
 
    python manage.py runserver
-   Usa el código con precaución.
-
-     ```
+   
+   ```
 
 6. Administrador del Sistema
 
    Administrador = Admin
    Password = 123456
+
+## Migraciones 
+
+Se procedió a actualizar el modelo inicial de datos agregando campos personalizados.
+
+   ```bash
+
+   python python manage.py makemigrations laboratorio --name actualizado_campo
+   
+
+     ```
+
 
 ## Contribución (Things-To-Do)
 
