@@ -16,15 +16,15 @@ El Gestor de Laboratorios, GESLAB FS 1.0, es una aplicación web desarrollada us
 
    * Vista "Agregar Laboratorio"
 
-      ![add_lab.png](static/docs/image/readme/form_labs.png)
+      ![add_lab.png](static/docs/image/readme/form_labs.PNG)
 
    * Vista "Editar Laboratorio"
 
-      ![edit_labs.png](static/docs/image/readme/edit_labs.png)
+      ![edit_labs.png](static/docs/image/readme/edit_labs.PNG)
 
    * Vista "Eliminar Laboratorio"
 
-      ![del_lab.png](static/docs/image/readme/del_lab.png)
+      ![del_lab.png](static/docs/image/readme/del_lab.PNG)
 
 2. **Gestión de Productos Farmacéuticos:** Permite listar, crear, editar y eliminar productos. Cada producto sólo puede pertenecer a un Laboratorio. Se puede asignar un año de vencimiento para control de stock. Se captura el nombre, laboratorio, año fabricación, año expiración, precio de costo y precio de venta.
   
