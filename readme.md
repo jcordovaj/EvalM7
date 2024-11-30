@@ -8,96 +8,172 @@ El Gestor de Laboratorios, GESLAB FS 1.0, es una aplicación web desarrollada us
 
 ## Características Principales
 
-* **Gestión de laboratorios:** Permite listar, crear, editar y eliminar laboratorios, pudiendo agregarse nuevos campos de ser necesario. Se captura el nombre del laboratorio, un alias, ciudad, país
+1. **Gestión de laboratorios:** Permite listar, crear, editar y eliminar laboratorios, pudiendo agregarse nuevos campos de ser necesario. Se captura el nombre del laboratorio, un alias, ciudad, país
   
-  * Vista "Información de Laboratorios"
+   * Vista "Información de Laboratorios"
 
-   ![info_labs.png](static/docs/image/readme/info_labs.png)
+      ![info_labs.png](static/docs/image/readme/info_labs.png)
 
-  * Vista "Agregar Laboratorio" 
+   * Vista "Agregar Laboratorio"
 
-   ![add_lab.png](static/docs/image/readme/form_labs.png)
+      ![add_lab.png](static/docs/image/readme/form_labs.png)
 
-  * Vista "Editar Laboratorio"
+   * Vista "Editar Laboratorio"
 
-   ![edit_labs.png](static/docs/image/readme/edit_labs.png)
+      ![edit_labs.png](static/docs/image/readme/edit_labs.png)
 
-  * Vista "Eliminar Laboratorio" 
+   * Vista "Eliminar Laboratorio"
 
-   ![del_lab.png](static/docs/image/readme/del_lab.png)
+      ![del_lab.png](static/docs/image/readme/del_lab.png)
 
-* **Gestión de Productos Farmacéuticos:** Permite listar, crear, editar y eliminar productos. Cada producto sólo puede pertenecer a un Laboratorio. Se puede asignar un año de vencimiento para control de stock. Se captura el nombre, laboratorio, año fabricación, año expiración, precio de costo y precio de venta.
+2. **Gestión de Productos Farmacéuticos:** Permite listar, crear, editar y eliminar productos. Cada producto sólo puede pertenecer a un Laboratorio. Se puede asignar un año de vencimiento para control de stock. Se captura el nombre, laboratorio, año fabricación, año expiración, precio de costo y precio de venta.
   
-  * Vista "Información de Productos"
+   * Vista "Información de Productos"
 
-   ![info_prods.png](static/docs/image/readme/info_prods.png)
+      ![info_prods.png](static/docs/image/readme/info_prods.png)
 
-  * Vista "Agregar Producto"
+   * Vista "Agregar Producto"
 
-   ![add_prod.png](static/docs/image/readme/add_prod.png)
+      ![add_prod.png](static/docs/image/readme/add_prod.png)
 
-  * Vista "Editar Producto"
+   * Vista "Editar Producto"
 
-   ![edit_prod.png](static/docs/image/readme/edit_prod.png)
+      ![edit_prod.png](static/docs/image/readme/edit_prod.png)
 
-  * Vista "Eliminar Producto"
+   * Vista "Eliminar Producto"
 
-   ![del_prod.png](static/docs/image/readme/del_prod.png)
+      ![del_prod.png](static/docs/image/readme/del_prod.png)
 
-* **Gestión de Directores:** Permite listar, crear, editar y eliminar Directores, pudiendo agregarse nuevos campos de ser necesario. cada Director, sólo puede pertenecer a un Laboratorio.
+3. **Gestión de Directores:** Permite listar, crear, editar y eliminar Directores, pudiendo agregarse nuevos campos de ser necesario. cada Director, sólo puede pertenecer a un Laboratorio.
   
-  * Vista "Información de Directores"
+   * Vista "Información de Directores"
 
-   ![info_dires.png](static/docs/image/readme/info_dires.png)
+      ![info_dires.png](static/docs/image/readme/info_dires.png)
 
-  * Vista "Agregar Director" 
+   * Vista "Agregar Director" 
 
-   ![add_dire.png](static/docs/image/readme/add_dire.png)
+      ![add_dire.png](static/docs/image/readme/add_dire.png)
 
-  * Vista "Editar Director"
+   * Vista "Editar Director"
 
-   ![edit_dire.png](static/docs/image/readme/edit_dire.png)
+      ![edit_dire.png](static/docs/image/readme/edit_dire.png)
 
-  * Vista "Eliminar Director"
+   * Vista "Eliminar Director"
 
-   ![del_dire.png](static/docs/image/readme/del_dire.png)
+      ![del_dire.png](static/docs/image/readme/del_dire.png)
 
-* **Gestión del Sistema (ADMIN):** El sistema permite crear perfiles de usuario, grupos, asignar permisos,  etc.
+4. **Gestión del Sistema (ADMIN):** El sistema permite crear perfiles de usuario, grupos, asignar permisos,  etc.
   
-  * Vista "Sitio Administrativo"
+   * Vista "Sitio Administrativo"
 
-   ![sitio_admin.png](static/docs/image/readme/sitio_admin.png)
+      ![sitio_admin.png](static/docs/image/readme/sitio_admin.png)
 
-  * Vista "Gestión Laboratorios"
+   * Vista "Gestión Laboratorios"
 
-   ![sitio_admin_labs.png](static/docs/image/readme/sitio_admin_labs.png)
+      ![sitio_admin_labs.png](static/docs/image/readme/sitio_admin_labs.png)
 
-  * Vista "Gestión Productos"
+   * Vista "Gestión Productos"
 
-   ![sitio_admin_prods.png](static/docs/image/readme/sitio_admin_prods.png)
+      ![sitio_admin_prods.png](static/docs/image/readme/sitio_admin_prods.png)
 
-  * Vista "Gestión Directores"
+   * Vista "Gestión Directores"
 
-   ![sitio_admin_dires.png](static/docs/image/readme/sitio_admin_dires.png)
+      ![sitio_admin_dires.png](static/docs/image/readme/sitio_admin_dires.png)
 
-* **Reportes:** Se pueden generar los siguientes informes: Información por Laboratorio, Producto y Director.
-* **Otras características:** El sistema incluye distintos métodos de búsqueda dinámicas y a través de filtros con selectores.
-* **Autenticación y Registros de Usurios:** El sistema dispone de un módulo para el registro y autenticación de usuarios, otorgando varios niveles de seguridad y segregación de la información.
+5. **Reportes:** Se pueden generar los siguientes informes: Información por Laboratorio, Producto y Director.
+
+6. **Otras características:** El sistema incluye distintos métodos de búsqueda dinámicas y a través de filtros con selectores.
+
+7. **Autenticación y Registros de Usurios:** El sistema dispone de un módulo para el registro y autenticación de usuarios, otorgando varios niveles de seguridad y segregación de la información.
   
-  * Vista "Login"
+   * Vista "Login"
 
-   ![login.png](static/docs/image/readme/login.png)
+      ![login.png](static/docs/image/readme/login.png)
 
-  * Vista "Registro"
+   * Vista "Registro"
 
-   ![registro.png](static/docs/image/readme/registro.png)
+      ![registro.png](static/docs/image/readme/registro.png)
 
-## Consultas
+## Consultas (queries) utilizando la shell de Django
 
+1) Desde el ambiente virtual:
 
+   ```bash
 
+   python manage.py shell
+   
+   ```
 
+2) Importar los modelos
 
+   ```bash
+
+   from laboratorio.models import Laboratorio, DirectorGeneral, Producto
+   
+   ```
+
+3) Generar las consultas:
+
+   3.1) Obtener todos los objetos: Laboratorio, DirectorGeneral y Productos.
+
+   3.1.1) Obtiene y guarda todos los registros de la tabla Laboratorio. Genera un bucle para mostrar los elementos de la variable de uno en uno, son dos líneas de código
+
+   ```bash
+
+   labs = Laboratorio.objects.all() 
+      for lab in labs: 
+         print(lab)
+   
+   ```
+
+   3.1.2) Los registros de la tabla DirectorGeneral
+
+   ```bash
+
+   dires = DirectorGeneral.objects.all()
+     for dire in dires:
+        print(dire)
+   
+   ```
+
+   3.1.3) Los registros de la tabla Productos
+  
+   ```bash
+
+   pds = Producto.objects.all()
+     for pd in pds:
+      print(pd)
+   
+   ```
+
+3.2) Obtener el laboratorio del Producto cuyo nombre es ‘Producto 1’.
+
+   ```bash
+
+   pd_1 = Producto.objects.get(nom_prod='Producto1') # Primero, obtener el nombre del Producto 1 (debe ser el mismo)        
+   lab_pd_1 = pd_1.lab_prod    # Encontrar el laboratorio por el producto asociado
+   print(lab_pd_1)      # Imprimir el resultado
+   
+   ```
+
+3.3) Listar y ordenar todos los productos por nombre, y muestre los valores de nombre y laboratorio.
+
+   ```bash
+
+   lista_productos_ordenados = Producto.objects.order_by('nom_prod')    # Primero, obtener todos los productos ordenados por nombre
+    for producto in lista_productos_ordenados:        # Bucle para mostrar los resultados uno a uno
+     print(producto.nom_prod, producto.lab_prod)        # se imprimen los elementos con sus atributos nombre y laboratorio
+   
+   ```
+
+3.4) Imprimir por pantalla los laboratorios de todos los productos.
+
+   ```bash
+
+   for producto in Producto.objects.all():
+      print(producto.lab_prod)
+   
+   ```
 
 ## Tecnologías Utilizadas
 
@@ -109,12 +185,14 @@ El Gestor de Laboratorios, GESLAB FS 1.0, es una aplicación web desarrollada us
 
 ## Instalación y Configuración
 
-
 1. **Clonar el repositorio:**
 
    ```bash
+
    https://github.com/jcordovaj/EvalM7.git
+   
    ```
+
 2. **Crear un entorno virtual:**
    * En Linux/macOS
 
@@ -125,6 +203,7 @@ El Gestor de Laboratorios, GESLAB FS 1.0, es una aplicación web desarrollada us
    source venv_lab/bin/activate  
    
    ```
+
    * En Windows
 
    ```bash
@@ -134,6 +213,7 @@ El Gestor de Laboratorios, GESLAB FS 1.0, es una aplicación web desarrollada us
    venv_lab\Scripts\activate 
    
    ```
+
 3. **Instalar las dependencias:**
 
    ```bash
@@ -141,6 +221,7 @@ El Gestor de Laboratorios, GESLAB FS 1.0, es una aplicación web desarrollada us
    pip install -r requirements.txt
    
    ```
+
 4. \**Configurar la base de datos:*
    * Crear usuario userdjango/userdjango
 
@@ -157,6 +238,7 @@ El Gestor de Laboratorios, GESLAB FS 1.0, es una aplicación web desarrollada us
     PASSWORD 'userdjango';
    
    ```
+
    * Crear BBDD
 
    Nombre: db_final_orm
@@ -170,9 +252,11 @@ El Gestor de Laboratorios, GESLAB FS 1.0, es una aplicación web desarrollada us
    python manage.py runserver
    
    ```
+
 6. **Administrador del Sistema**
    * Administrador = Admin
    * Password      = 123456
+
 7. **Generación de usuarios de prueba**
 
    Se ha empleado la siguiente nomenclatura para crear los usuarios de prueba.
@@ -182,18 +266,23 @@ El Gestor de Laboratorios, GESLAB FS 1.0, es una aplicación web desarrollada us
 
 ## Requerimientos
 
-
 1. **Ambiente virtual**
-   * Crear entorno virtual, usamos virtual_lab, como alternativa a "venv", para poder diferencialos.
+   * Crear entorno virtual, usamos el prefijo "virtual_lab", como alternativa a "venv", para poder diferenciarlos.
 
    ```bash
    
    python -m venv virtual_lab
    
    ```
+
 2. Activar el entorno virtual para comenzar a trabajar, debe aparecer un prefijo con el nombre del ambiente virtual
 
+   ```bash
+   
    .\\virtual_lab\\Scripts\\activate
+
+   ```
+
 3. Instalar los requerimientos usando el archivo "requirements.txt"
 
    ```bash
@@ -201,9 +290,10 @@ El Gestor de Laboratorios, GESLAB FS 1.0, es una aplicación web desarrollada us
    pip install -r requirements.txt
    
    ```
+
 4. **Migraciones**
 
-Se procedió a actualizar el modelo inicial de datos agregando campos personalizados.
+Se procedió a actualizar el modelo inicial de datos agregando campos personalizados con el nombre "actualizado_campo".
 
 * Se generan las migraciones luego de modificar los modelos, usando el comando "makemigrations"
 
@@ -212,12 +302,12 @@ Se procedió a actualizar el modelo inicial de datos agregando campos personaliz
   python python manage.py makemigrations laboratorio --name actualizado_campo
   
   ```
+
 * Se aplican las migraciones usando el comando "migrate"
 
   ```bash
   
   python python manage.py makemigrations laboratorio --name actualizado_campo
-  
   
   ```
 
@@ -242,7 +332,7 @@ Se puede contribuir con los problemas o nuevas ideas, por favor respetar el esti
 
 ## Licencia
 
-Proyecto con fines educativos, no protegido por licencias
+Proyecto con fines educativos, Licencia MIT
 
 ## Autor
 
@@ -250,5 +340,3 @@ Jota Córdova - Fun Manager
 
 * **Otros colaboradores**
   * Nelson Ramirez - Tutor
-
-
