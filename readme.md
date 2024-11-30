@@ -30,55 +30,55 @@ El Gestor de Laboratorios, GESLAB FS 1.0, es una aplicación web desarrollada us
   
    * Vista "Información de Productos"
 
-      ![info_prods.png](static/docs/image/readme/info_prods.png)
+      ![info_prods.png](static/docs/image/readme/info_prods.PNG)
 
    * Vista "Agregar Producto"
 
-      ![add_prod.png](static/docs/image/readme/add_prod.png)
+      ![add_prod.png](static/docs/image/readme/add_prod.PNG)
 
    * Vista "Editar Producto"
 
-      ![edit_prod.png](static/docs/image/readme/edit_prod.png)
+      ![edit_prod.png](static/docs/image/readme/edit_prod.PNG)
 
    * Vista "Eliminar Producto"
 
-      ![del_prod.png](static/docs/image/readme/del_prod.png)
+      ![del_prod.png](static/docs/image/readme/del_prod.PNG)
 
 3. **Gestión de Directores:** Permite listar, crear, editar y eliminar Directores, pudiendo agregarse nuevos campos de ser necesario. cada Director, sólo puede pertenecer a un Laboratorio.
   
    * Vista "Información de Directores"
 
-      ![info_dires.png](static/docs/image/readme/info_dires.png)
+      ![info_dires.png](static/docs/image/readme/info_dires.PNG)
 
    * Vista "Agregar Director"
 
-      ![add_dire.png](static/docs/image/readme/add_dire.png)
+      ![add_dire.png](static/docs/image/readme/add_dire.PNG)
 
    * Vista "Editar Director"
 
-      ![edit_dire.png](static/docs/image/readme/edit_dire.png)
+      ![edit_dire.png](static/docs/image/readme/edit_dire.PNG)
 
    * Vista "Eliminar Director"
 
-      ![del_dire.png](static/docs/image/readme/del_dire.png)
+      ![del_dire.png](static/docs/image/readme/del_dire.PNG)
 
 4. **Gestión del Sistema (ADMIN):** El sistema permite crear perfiles de usuario, grupos, asignar permisos,  etc.
   
    * Vista "Sitio Administrativo"
 
-      ![sitio_admin.png](static/docs/image/readme/sitio_admin.png)
+      ![sitio_admin.png](static/docs/image/readme/sitio_admin.PNG)
 
    * Vista "Gestión Laboratorios"
 
-      ![sitio_admin_labs.png](static/docs/image/readme/sitio_admin_labs.png)
+      ![sitio_admin_labs.png](static/docs/image/readme/sitio_admin_labs.PNG)
 
    * Vista "Gestión Productos"
 
-      ![sitio_admin_prods.png](static/docs/image/readme/sitio_admin_prods.png)
+      ![sitio_admin_prods.png](static/docs/image/readme/sitio_admin_prods.PNG)
 
    * Vista "Gestión Directores"
 
-      ![sitio_admin_dires.png](static/docs/image/readme/sitio_admin_dires.png)
+      ![sitio_admin_dires.png](static/docs/image/readme/sitio_admin_dires.PNG)
 
 5. **Reportes:** Se pueden generar los siguientes informes: Información por Laboratorio, Producto y Director.
 
@@ -88,11 +88,11 @@ El Gestor de Laboratorios, GESLAB FS 1.0, es una aplicación web desarrollada us
   
    * Vista "Login"
 
-      ![login.png](static/docs/image/readme/login.png)
+      ![login.png](static/docs/image/readme/login.PNG)
 
    * Vista "Registro"
 
-      ![registro.png](static/docs/image/readme/registro.png)
+      ![registro.png](static/docs/image/readme/registro.PNG)
 
 ## Consultas (queries) utilizando la shell de Django
 
