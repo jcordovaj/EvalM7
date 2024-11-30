@@ -18,7 +18,7 @@ Class DirectorGeneralAdmin(admin.ModelAdmin):
 admin.site.register(DirectorGeneral, DirectorGeneralAdmin)
 """
 class LaboratorioAdmin(admin.ModelAdmin):
-    list_display  = ('nom_lab', 'city_lab', 'pais_lab')
+    list_display  = ('id', 'nom_lab', 'city_lab', 'pais_lab')
     list_filter   = ('nom_lab', 'pais_lab')
     search_fields = ('nom_lab',)
 
@@ -29,7 +29,7 @@ admin.site.register(Laboratorio, LaboratorioAdmin)
 
 
 class DirectorGeneralAdmin(admin.ModelAdmin):
-    list_display = ('nom_dire', 'lab_dire')  # Access laboratory name through related field
+    list_display = ('id', 'nom_dire', 'lab_dire')  # Access laboratory name through related field
     search_fields = ('nom_dire', 'lab_dire__nom_lab')  # Search by director name and lab name
 
     # Order by director name
@@ -48,7 +48,7 @@ admin.site.register(DirectorGeneral, DirectorGeneralAdmin)
 
 
 class ProductoAdmin(admin.ModelAdmin):
-    list_display  = ('nom_prod', 'lab_prod', 'f_fabricacion', 'p_costo', 'p_venta')
+    list_display  = ('id', 'nom_prod', 'lab_prod', 'f_fabricacion', 'p_costo', 'p_venta')
     list_filter   = ('lab_prod', 'nom_prod')
     search_fields = ('nom_prod',)
 

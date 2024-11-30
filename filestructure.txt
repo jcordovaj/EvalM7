@@ -13,6 +13,8 @@
         |-- __init__.cpython-312.pyc
 |-- Data
     |-- respaldobbdd_db_final_orm.tar
+|-- image-1.png
+|-- image.png
 |-- laboratorio
     |-- admin.py
     |-- apps.py
@@ -91,6 +93,24 @@
         |-- image
             |-- readme
                 |-- 1732829091608.png
+                |-- add_dire.PNG
+                |-- add_prod.PNG
+                |-- del_dire.PNG
+                |-- del_lab.PNG
+                |-- del_prod.PNG
+                |-- edit_dire.PNG
+                |-- edit_labs.PNG
+                |-- edit_prod.PNG
+                |-- form_labs.PNG
+                |-- info_dires.PNG
+                |-- info_labs.PNG
+                |-- info_prods.PNG
+                |-- login.PNG
+                |-- registro.PNG
+                |-- sitio_admin.PNG
+                |-- sitio_admin_dires.PNG
+                |-- sitio_admin_labs.PNG
+                |-- sitio_admin_prods.PNG
         |-- readme.html
     |-- img
         |-- fondo_lab_alt.PNG
