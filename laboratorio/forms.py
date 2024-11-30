@@ -31,10 +31,10 @@ class DireForm(forms.ModelForm):
 class ProdForm(forms.ModelForm):
     class Meta:
         model = Producto
-        fields = ['nom_prod', 'lab_prod', 'f_fabricacion', 'p_costo', 'p_venta']
+        fields = ['nom_prod', 'lab_prod', 'f_fabricacion', 'f_expiracion', 'p_costo', 'p_venta']
         widgets = {
             'lab_prod': forms.Select(attrs={'class': 'form-control'}),
-            'f_fabricacion': forms.Select(choices=Producto.anios_choices, attrs={'class': 'form-control'}),
+            #'f_fabricacion': forms.Select(choices=Producto.anios_choices, attrs={'class': 'form-control'}),
         }
 
     def __init__(self, *args, **kwargs):

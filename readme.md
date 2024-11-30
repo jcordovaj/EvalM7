@@ -87,7 +87,7 @@ El Gestor de Laboratorios, GESLAB FS 1.0, es una aplicación web desarrollada us
    pass: userdjango
    collation: Spanish_spain.1252
 
-5. Ejecutar la aplicación
+5. **Ejecutar la aplicación:**
 
    ```bash
 
@@ -95,22 +95,79 @@ El Gestor de Laboratorios, GESLAB FS 1.0, es una aplicación web desarrollada us
    
    ```
 
-6. Administrador del Sistema
+6. **Administrador del Sistema**
 
-   Administrador = Admin
-   Password = 123456
+   * Administrador = Admin
+   * Password      = 123456
 
-## Migraciones 
+7. **Generación de usuarios de prueba**
+
+   Se ha empleado la siguiente nomenclatura para crear los usuarios de prueba.
+
+   * user: usuarioX (X=Un número entero positivo correlativo)
+   * correo: <usuarioX@usuarioX.com>
+   * pass: clavefacil1234
+
+## Requerimientos
+
+1. **Ambiente virtual**
+
+   * Crear entorno virtual, usamos virtual_lab, como alternativa a "venv", para poder diferencialos.
+
+   ```bash
+
+   python -m venv virtual_lab
+
+   ```
+
+2. Activar el entorno virtual para comenzar a trabajar, debe aparecer un prefijo con el nombre del ambiente virtual
+
+   .\virtual_lab\Scripts\activate
+
+3. Instalar los requerimientos usando el archivo "requirements.txt"
+
+   ```bash
+
+   pip install -r requirements.txt
+
+   ```
+
+
+4. **Migraciones**
 
 Se procedió a actualizar el modelo inicial de datos agregando campos personalizados.
+
+* Se generan las migraciones luego de modificar los modelos, usando el comando "makemigrations"
+
+   ```bash
+
+   python python manage.py makemigrations laboratorio --name actualizado_campo
+   
+   ```
+
+* Se aplican las migraciones usando el comando "migrate"
 
    ```bash
 
    python python manage.py makemigrations laboratorio --name actualizado_campo
    
 
-     ```
+   ```
 
+   ```bash
+
+   Migrations for 'laboratorio':
+   laboratorio\migrations\0004_actualizado_campo.py
+      + Add field alias_lab to laboratorio
+      + Add field f_expiracion to producto
+   laboratorio\migrations\0004_actualizado_campo.py
+      + Add field alias_lab to laboratorio
+      + Add field f_expiracion to producto
+      + Add field alias_lab to laboratorio
+      + Add field f_expiracion to producto
+      + Add field f_expiracion to producto
+
+   ```
 
 ## Contribución (Things-To-Do)
 
