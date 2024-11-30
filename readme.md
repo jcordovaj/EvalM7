@@ -50,7 +50,7 @@ El Gestor de Laboratorios, GESLAB FS 1.0, es una aplicación web desarrollada us
 
       ![info_dires.png](static/docs/image/readme/info_dires.png)
 
-   * Vista "Agregar Director" 
+   * Vista "Agregar Director"
 
       ![add_dire.png](static/docs/image/readme/add_dire.png)
 
