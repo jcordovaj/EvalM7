@@ -1,0 +1,36 @@
+1) Desde el ambiente virtual:
+	python manage.py shell
+2) Importar los modelos
+	from laboratorio.models import Laboratorio, DirectorGeneral, Producto
+3) Generar las consultas:_
+
+3.1) Obtener todos los objetos: Laboratorio, DirectorGeneral y Productos.
+
+ 3.1.1) Los registros de la tabla Laboratorio
+ 	labs = Laboratorio.objects.all() # Obtiene y guarda todos los registros de la tabla
+ 	for lab in labs: # Bucle para mostrar los elementos de la variable de uno en uno, son dos líneas de código
+ 	    print(lab)
+
+ 3.1.2) Los registros de la tabla DirectorGeneral
+ 	dires = DirectorGeneral.objects.all() # Obtiene y guarda todos los registros de la tabla
+ 	for dire in dires: # Bucle para mostrar los elementos de la variable de uno en uno, son dos líneas de código
+ 	    print(dire)
+
+ 3.1.3) Los registros de la tabla Productos
+ 	pds = Producto.objects.all() # Obtiene y guarda todos los registros de la tabla
+ 	for pd in pds: # Bucle para mostrar los elementos de la variable de uno en uno, son dos líneas de código
+ 	    print(pd)
+
+3.2) Obtener el laboratorio del Producto cuyo nombre es ‘Producto 1’.
+	pd_1 = Producto.objects.get(nom_prod='Producto1')	# Primero, obtener el nombre del Producto 1 (debe ser el mismo)        
+	lab_pd_1 = pd_1.lab_prod				# Encontrar el laboratorio por el producto asociado
+	print(lab_pd_1)						# Imprimir el resultado
+
+3.3) Listar y ordenar todos los productos por nombre, y que muestre los valores de nombre y laboratorio.
+	lista_productos_ordenados = Producto.objects.order_by('nom_prod')    # Primero, obtener todos los productos ordenados por nombre
+	for producto in lista_productos_ordenados:			     # Bucle para mostrar los resultados uno a uno
+	    print(producto.nom_prod, producto.lab_prod)			     # se imprimen los elementos con sus atributos nombre y laboratorio
+
+3.4) Imprimir por pantalla los laboratorios de todos los productos.
+	for producto in Producto.objects.all():
+            print(producto.lab_prod)

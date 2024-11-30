@@ -13,6 +13,7 @@
         |-- __init__.cpython-312.pyc
 |-- Data
     |-- respaldobbdd_db_final_orm.tar
+|-- entregaEvalM7_JorgeCordova.zip
 |-- image-1.png
 |-- image.png
 |-- laboratorio
@@ -83,6 +84,7 @@
         |-- views.cpython-312.pyc
         |-- __init__.cpython-312.pyc
 |-- manage.py
+|-- queries_shell.txt
 |-- readme.md
 |-- requirements.txt
 |-- static
@@ -112,6 +114,7 @@
                 |-- sitio_admin_labs.PNG
                 |-- sitio_admin_prods.PNG
         |-- readme.html
+        |-- readme.pdf
     |-- img
         |-- fondo_lab_alt.PNG
         |-- labs001.svg
