@@ -229,6 +229,7 @@ Se procedió a actualizar el modelo inicial de datos agregando campos personaliz
    ```
 
 2. **Crear un entorno virtual:**
+
    * En Linux/macOS
 
    ```bash
@@ -257,8 +258,10 @@ Se procedió a actualizar el modelo inicial de datos agregando campos personaliz
    
    ```
 
-4. \**Configurar la base de datos:*
-   * Crear usuario userdjango/userdjango
+4. **Configurar la base de datos:**
+
+   * Crear usuario : userdjango
+   * Password      : userdjango
 
    ```sql
    
@@ -280,6 +283,7 @@ Se procedió a actualizar el modelo inicial de datos agregando campos personaliz
    Usuario: userdjango (superuser)
    pass: userdjango
    collation: Spanish_spain.1252
+
 5. **Ejecutar la aplicación:**
 
    ```bash
@@ -289,6 +293,7 @@ Se procedió a actualizar el modelo inicial de datos agregando campos personaliz
    ```
 
 6. **Administrador del Sistema**
+
    * Administrador = Admin
    * Password      = 123456
 
