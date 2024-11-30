@@ -12,7 +12,7 @@ El Gestor de Laboratorios, GESLAB FS 1.0, es una aplicación web desarrollada us
   
    * Vista "Información de Laboratorios"
 
-      ![info_labs.png](static/docs/image/readme/info_labs.png)
+      ![info_labs.png](static/docs/image/readme/info_labs.PNG
 
    * Vista "Agregar Laboratorio"
 
