@@ -303,10 +303,7 @@ class RegistroView(View):
     def post(self, request):
         form = RegistroUsuarioForm(request.POST)
         if form.is_valid():
-            #content_type = ContentType.objects.get_for_model(Laboratorio)  #permiso
-            #visualizar_catalogo = Permission.objects.get(codename='visualizar_catalogo', content_type=content_type) #permiso
             user = form.save()
-            #user.user_permissions.add(visualizar_catalogo) #permiso
             login(request, user)
             messages.success(request, "Registro Exitoso.")
             return redirect("/")
