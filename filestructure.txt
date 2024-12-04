@@ -33,8 +33,6 @@
             |-- 0004_actualizado_campo.cpython-312.pyc
             |-- __init__.cpython-312.pyc
     |-- models.py
-    |-- sistema_hotel
-        |-- calificadorEstrellas.txt
     |-- templates
         |-- backs
             |-- delete_lab.back
